@@ -127,8 +127,6 @@ interface ICocktailPieChartProps {
 export default function CocktailPieChart({
   ingredients,
 }: ICocktailPieChartProps) {
-  console.log(ingredients, 'ingredients')
-
   return (
     <div className="w-32 h-32">
       <Pie

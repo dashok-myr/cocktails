@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import SearchInput from '@/app/SearchInput'
-import CocktailList from '@/app/CocktailList'
+import CocktailSearchResult from '@/app/CocktailSearchResult'
 
 export interface ICocktail {
   strDrink: string
@@ -37,7 +37,7 @@ export default function Home() {
             setCocktails([])
           }}
         />
-        <CocktailList cocktails={cocktails} />
+        <CocktailSearchResult cocktails={cocktails} />
       </div>
     </main>
   )

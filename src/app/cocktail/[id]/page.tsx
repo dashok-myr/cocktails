@@ -36,8 +36,7 @@ export default async function CocktailDetails({
           {cocktailDetails.strDrink}
         </div>
       </div>
-
-      <div className="flex flex-col items-center py-8 px-5">
+      <div className="flex flex-col items-center py-8 px-5 lg:w-[400px] md:m-auto">
         <Image
           className="rounded-full"
           src={cocktailDetails.strDrinkThumb}

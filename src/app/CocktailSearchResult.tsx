@@ -8,7 +8,7 @@ interface ICocktailList {
   cocktails: ICocktail[] | null
 }
 
-export default function CocktailList({ cocktails }: ICocktailList) {
+export default function CocktailSearchResult({ cocktails }: ICocktailList) {
   if (!cocktails) {
     return (
       <div className="flex justify-center items-center">
