@@ -79,21 +79,21 @@ export default function getAllIngredientsInfo(
     return key.includes('strMeasure')
   })
 
-  const zipped = _.zip(ingredientsKeys, measureKeys) as [
+  const zippedKeys = _.zip(ingredientsKeys, measureKeys) as [
     `strIngredient${AllowedNumbers}`,
     `strMeasure${AllowedNumbers}`
   ][]
 
-  const meme = zipped.map(([ingredientKey, measureKey], index) => {
-    return {
-      ingredient: cocktailDetails[ingredientKey],
-      measure: cocktailDetails[measureKey]?.trim(),
-      backgroundColor: backgroundColors[index],
-      borderColor: borderColors[index],
-    }
-  })
-
-  return meme.filter(({ ingredient, measure }) => {
-    return !!ingredient || !!measure
-  }) as IngredientsInfo[]
+  return zippedKeys
+    .map(([ingredientKey, measureKey], index) => {
+      return {
+        ingredient: cocktailDetails[ingredientKey],
+        measure: cocktailDetails[measureKey]?.trim(),
+        backgroundColor: backgroundColors[index],
+        borderColor: borderColors[index],
+      }
+    })
+    .filter(({ ingredient, measure }) => {
+      return !!ingredient || !!measure
+    }) as IngredientsInfo[]
 }
