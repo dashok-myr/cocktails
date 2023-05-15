@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import searchIcon from '@/icons/icons8-search.svg'
-import deleteIcon from '@/icons/cross-svgrepo-com.svg'
+import searchIcon from '@/icons/search-icon.svg'
+import deleteIcon from '@/icons/cross-icon.svg'
 import React, { useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 

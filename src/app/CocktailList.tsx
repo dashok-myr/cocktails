@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import nextIcon from '@/icons/icon-next.svg'
+import nextIcon from '@/icons/next-icon.svg'
 import React from 'react'
 import { ICocktail } from '@/app/page'
 

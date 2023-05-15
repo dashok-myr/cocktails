@@ -3,7 +3,7 @@ import Image from 'next/image'
 import ICocktailDetails from '@/app/cocktail/[id]/ICocktailDetails'
 import getAllIngredientsInfo from '@/app/cocktail/[id]/getAllIngredientsInfo'
 import CocktailPieChart from '@/app/cocktail/[id]/CocktailPieChart'
-import leftArrow from '../../../icons/icons8-less-than-100.png'
+import leftArrow from '../../../icons/prev-icon.png'
 import Link from 'next/link'
 
 async function fetchCocktailDetails(id: string): Promise<ICocktailDetails> {
