@@ -18,7 +18,7 @@ export default function CocktailSearchResult({ cocktails }: ICocktailList) {
   }
 
   return (
-    <div className="overflow-y-auto h-96">
+    <div className="overflow-y-auto h-auto md:h-96">
       {cocktails?.length > 0 && (
         <div className="flex flex-col justify-center md:w-[480px] md:mx-auto bg-dark-grayish-blue1 p-5">
           {cocktails.map((cocktail) => {

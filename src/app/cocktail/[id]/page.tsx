@@ -23,7 +23,7 @@ export default async function CocktailDetails({
   const ingredients = getAllIngredientsInfo(cocktailDetails)
 
   return (
-    <div className="bg-desaturated-blue h-max relative flex flex-col pb-52">
+    <div className="bg-desaturated-blue h-max relative flex flex-col md:pb-52">
       <CocktailBackground label={cocktailDetails.strDrink.toUpperCase()} />
       <div className="flex flex-col mt-48 items-center py-8 px-5 lg:w-[480px] md:mx-auto bg-dark-grayish-blue1 drop-shadow-2xl">
         <Image
