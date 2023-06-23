@@ -15,15 +15,13 @@ const fetchCocktails = async (cocktailSearchValue: string) => {
   )
   return await data.json()
 }
+
 export default function Home() {
   const [cocktails, setCocktails] = useState<ICocktail[] | null>([])
 
   return (
-    <main className="flex flex-col justify-center">
-      <div className="text-center font-semibold p-3 bg-gray-100 w-full border-b-2">
-        Thirsty
-      </div>
-      <div>
+    <main className="flex flex-col bg-desaturated-blue h-screen">
+      <div className="h-72 bg-logo-cocktail bg-cover bg-center bg-no-repeat">
         <SearchInput
           onDebouncedChange={async (debouncedSearchValue: string) => {
             if (!debouncedSearchValue) {

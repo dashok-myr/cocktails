@@ -20,39 +20,39 @@ type AllowedNumbers =
   | 15
 
 const backgroundColors = [
-  'rgba(255, 99, 132, 0.2)',
-  'rgba(54, 100, 235, 0.2)',
-  'rgba(255, 206, 86, 0.2)',
-  'rgba(75, 192, 192, 0.2)',
-  'rgba(153, 102, 255, 0.2)',
-  'rgba(255, 359, 64, 0.2)',
-  'rgba(255, 99, 132, 0.2)',
-  'rgba(54, 162, 235, 0.2)',
-  'rgba(255, 206, 86, 0.2)',
-  'rgba(75, 192, 192, 0.2)',
-  'rgba(153, 102, 255, 0.2)',
-  'rgba(255, 159, 64, 0.2)',
-  'rgba(255, 109, 64, 0.2)',
-  'rgba(125, 169, 34, 0.2)',
-  'rgba(225, 99, 251, 0.2)',
+  'rgba(255,99,132,0.66)',
+  'rgba(54,100,235,0.61)',
+  'rgba(255,206,86,0.62)',
+  'rgba(75,192,192,0.6)',
+  'rgba(153,102,255,0.64)',
+  'rgba(255,255,64,0.66)',
+  'rgba(255,99,132,0.7)',
+  'rgba(54,162,235,0.67)',
+  'rgba(255,206,86,0.69)',
+  'rgba(75,192,192,0.65)',
+  'rgba(153,102,255,0.73)',
+  'rgba(255,159,64,0.67)',
+  'rgba(255,109,64,0.62)',
+  'rgba(166,232,48,0.65)',
+  'rgba(225,99,251,0.6)',
 ]
 
 const borderColors = [
   'rgba(255, 99, 132, 1)',
-  'rgba(54, 100, 235, 1)',
-  'rgba(255, 206, 86, 1)',
-  'rgba(75, 192, 192, 1)',
-  'rgba(153, 102, 255, 1)',
-  'rgba(255, 359, 64, 1)',
-  'rgba(255, 99, 132, 1)',
-  'rgba(54, 162, 235, 1)',
-  'rgba(255, 206, 86, 1)',
-  'rgba(75, 192, 192, 1)',
-  'rgba(153, 102, 255, 1)',
-  'rgba(255, 159, 64, 1)',
-  'rgba(255, 109, 64, 1)',
-  'rgba(125, 169, 34, 1)',
-  'rgba(225, 99, 251, 1)',
+  'rgb(36,89,255)',
+  'rgb(255,202,65)',
+  'rgb(90,255,255)',
+  'rgb(133,75,255)',
+  'rgb(255,255,0)',
+  'rgb(255,0,56)',
+  'rgb(35,170,255)',
+  'rgb(250,188,46)',
+  'rgb(0,255,255)',
+  'rgb(86,0,255)',
+  'rgb(255,126,0)',
+  'rgb(253,56,0)',
+  'rgb(172,255,0)',
+  'rgb(211,52,255)',
 ]
 
 export type Measure = `${number} ${IngredientUnit}`
@@ -94,6 +94,6 @@ export default function getAllIngredientsInfo(
       }
     })
     .filter(({ ingredient, measure }) => {
-      return !!ingredient || !!measure
-    }) as IngredientsInfo[]
+      return !!ingredient && !!measure
+    }) as IngredientsInfo[] // cast because the filtering doesn't give the correct types even though i am filtering out null and undefined
 }

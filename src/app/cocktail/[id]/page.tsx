@@ -3,8 +3,7 @@ import Image from 'next/image'
 import ICocktailDetails from '@/app/cocktail/[id]/ICocktailDetails'
 import getAllIngredientsInfo from '@/app/cocktail/[id]/getAllIngredientsInfo'
 import CocktailPieChart from '@/app/cocktail/[id]/CocktailPieChart'
-import leftArrow from '../../../icons/prev-icon.png'
-import Link from 'next/link'
+import CocktailBackground from '@/app/cocktail/[id]/CocktailBackground'
 
 async function fetchCocktailDetails(id: string): Promise<ICocktailDetails> {
   const res = await fetch(
@@ -24,19 +23,9 @@ export default async function CocktailDetails({
   const ingredients = getAllIngredientsInfo(cocktailDetails)
 
   return (
-    <>
-      <div className="grid grid-cols-3 bg-gray-100 border-b-2 p-3">
-        <div className="flex items-center">
-          <Image src={leftArrow} alt="arrowLeft" width={25} height={25} />
-          <Link href="/" className="justify-self-start text-blue-600">
-            Thirsty
-          </Link>
-        </div>
-        <div className="text-center font-semibold ">
-          {cocktailDetails.strDrink}
-        </div>
-      </div>
-      <div className="flex flex-col items-center py-8 px-5 lg:w-[400px] md:m-auto">
+    <div className="bg-desaturated-blue h-max relative flex flex-col pb-52">
+      <CocktailBackground label={cocktailDetails.strDrink.toUpperCase()} />
+      <div className="flex flex-col mt-48 items-center py-8 px-5 lg:w-[480px] md:mx-auto bg-dark-grayish-blue1 drop-shadow-2xl">
         <Image
           className="rounded-full"
           src={cocktailDetails.strDrinkThumb}
@@ -44,13 +33,20 @@ export default async function CocktailDetails({
           width="130"
           height="130"
         />
-        <div className="font-bold text-xl pt-4">{cocktailDetails.strDrink}</div>
-        <div className="self-start font-bold pt-8">Ingredients:</div>
+        <div className="font-bold text-xl pt-4 text-bright-blue">
+          {cocktailDetails.strDrink}
+        </div>
+        <div className="self-start font-bold pt-8 text-bright-blue">
+          Ingredients:
+        </div>
         <div className="flex justify-between w-full">
           <div className="flex flex-col">
             {ingredients.map(({ ingredient, measure, backgroundColor }) => {
               return (
-                <div key={ingredient} className="flex items-center">
+                <div
+                  key={ingredient}
+                  className="flex items-center text-light-grayish-blue"
+                >
                   <div
                     className="h-3 w-3"
                     style={{ backgroundColor: backgroundColor }}
@@ -64,8 +60,10 @@ export default async function CocktailDetails({
           </div>
           <CocktailPieChart ingredients={ingredients} />
         </div>
-        <div className="mt-7">{cocktailDetails.strInstructions}</div>
+        <div className="mt-7 text-light-grayish-blue">
+          {cocktailDetails.strInstructions}
+        </div>
       </div>
-    </>
+    </div>
   )
 }

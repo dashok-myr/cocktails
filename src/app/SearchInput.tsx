@@ -20,30 +20,35 @@ export default function SearchInput({
   }, 300)
 
   return (
-    <div className="relative p-3">
-      <div className="absolute inset-y-0 left-3 flex items-center pl-3 pointer-events-none">
-        <Image className="w-5 h-5" src={searchIcon} alt="search" />
+    <div className="mt-28">
+      <div className="text-center text-bright-blue font-bold text-5xl tracking-widest">
+        LET&apos;S PARTY
       </div>
-      <input
-        onChange={async (e) => {
-          setSearchValue(e.target.value)
-          debounced(e.target.value)
-        }}
-        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-8 p-2.5"
-        placeholder="Find a drink"
-        value={searchValue}
-      />
-      {searchValue && (
-        <button
-          className="absolute inset-y-0 right-6 flex items-center pl-3"
-          onClick={() => {
-            setSearchValue('')
-            onInputClear()
+      <div className="relative flex justify-center p-3 lg:w-[480px] mx-auto mb-10">
+        <div className="absolute inset-y-0 left-3 flex items-center pl-3 pointer-events-none">
+          <Image className="w-5 h-5" src={searchIcon} alt="search" />
+        </div>
+        <input
+          onChange={async (e) => {
+            setSearchValue(e.target.value)
+            debounced(e.target.value)
           }}
-        >
-          <Image className="w-3 h-3" src={deleteIcon} alt="search" />
-        </button>
-      )}
+          className="border border-pink-300 text-light-grayish-blue text-sm rounded-lg bg-dark-grayish-blue block w-full pl-8 p-2.5"
+          placeholder="Find a drink"
+          value={searchValue}
+        />
+        {searchValue && (
+          <button
+            className="absolute inset-y-0 right-6 flex items-center pl-3"
+            onClick={() => {
+              setSearchValue('')
+              onInputClear()
+            }}
+          >
+            <Image className="w-3 h-3" src={deleteIcon} alt="search" />
+          </button>
+        )}
+      </div>
     </div>
   )
 }

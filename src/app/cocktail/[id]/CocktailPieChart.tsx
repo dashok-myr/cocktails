@@ -99,21 +99,15 @@ function convertToOz(measure: Measure) {
 
 function getPieChartData(ingredients: IngredientsInfo[]) {
   return {
-    labels: ingredients
-      .filter((ingredients) => ingredients.measure)
-      .map((ingredient) => ingredient.ingredient),
+    labels: ingredients.map((ingredient) => ingredient.ingredient),
     datasets: [
       {
         label: 'oz',
-        data: ingredients
-          .filter((ingredients) => ingredients.measure)
-          .map((ingredient) => convertToOz(ingredient.measure)),
-        backgroundColor: ingredients
-          .filter((ingredients) => ingredients.measure)
-          .map((ingredient) => ingredient.backgroundColor),
-        borderColor: ingredients
-          .filter((ingredients) => ingredients.measure)
-          .map((ingredient) => ingredient.borderColor),
+        data: ingredients.map((ingredient) => convertToOz(ingredient.measure)),
+        backgroundColor: ingredients.map(
+          (ingredient) => ingredient.backgroundColor
+        ),
+        borderColor: ingredients.map((ingredient) => ingredient.borderColor),
         borderWidth: 1,
       },
     ],
