@@ -20,10 +20,6 @@ export default function SearchInput({
   }, 300)
 
   return (
-    <div className="mt-28">
-      <div className="text-center text-bright-blue font-bold text-5xl tracking-widest">
-        LET&apos;S PARTY
-      </div>
       <div className="relative flex justify-center p-3 lg:w-[480px] mx-auto mb-10">
         <div className="absolute inset-y-0 left-3 flex items-center pl-3 pointer-events-none">
           <Image className="w-5 h-5" src={searchIcon} alt="search" />
@@ -33,7 +29,7 @@ export default function SearchInput({
             setSearchValue(e.target.value)
             debounced(e.target.value)
           }}
-          className="border border-pink-300 text-light-grayish-blue text-sm rounded-lg bg-dark-grayish-blue block w-full pl-8 p-2.5"
+          className="border border-pink-300 text-light-grayish-blue text-sm rounded-lg bg-dark-grayish-blue block w-full pl-9 p-2.5"
           placeholder="Find a drink"
           value={searchValue}
         />
@@ -49,6 +45,5 @@ export default function SearchInput({
           </button>
         )}
       </div>
-    </div>
   )
 }
